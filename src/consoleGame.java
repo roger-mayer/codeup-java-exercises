@@ -2,63 +2,65 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class consoleGame {
+
+    static int badGuyHealth = 400;
+    static int userHealth = 400;
+    static  Scanner scanner = new Scanner(System.in);
+    static String playAgain = "yes";
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        setup();
+        fight();
+    }
+
+    public static void setup() {
+
+
         System.out.println("What's your name?");
         String userName = scanner.next();
-        System.out.println(userName + "," + " Do you want to play a game?\n");
-        String startAnswer = scanner.next();
+        Random rando = new Random();
+        System.out.println("Enemy Health= " + badGuyHealth);
+        System.out.println(userName + "'s health= " + userHealth);
+    }
 
-        String playAgain = "yes";
-
-//            if (startAnswer.equals("yes")) {
-//                System.out.println("Like you had a choice!\n");
-//            } else if (startAnswer.equals("no")) {
-//                System.out.println("too bad, we are playing anyways...\n");
-//            }
-            Random rando = new Random();
-
-//            int userAttackTwo = rando.nextInt(300);
-            int badGuyHealth = rando.nextInt(400);
-            int userHealth = rando.nextInt(400);
-            int numberRandom = rando.nextInt(2);
-
-            System.out.println("Enemy Health= "+ badGuyHealth);
-            System.out.println(userName + "'s health= "+ userHealth);
+    public static void fight(){
+//        String playAgain = "yes";
         do {
-            int userAttack = rando.nextInt(200);
-            int badGuyAttack = rando.nextInt(200);
-            System.out.println("attack 1 or 2");
-
-            int attack = scanner.nextInt();
-            if (attack == numberRandom & userHealth > 0 & badGuyHealth > 0){
-                System.out.println("Great shot! Your punch does " + userAttack + " damage\n");
-                badGuyHealth -= userAttack;
+            Random rando = new Random();
+            Scanner scanner = new Scanner(System.in);
+            int numberRandom = rando.nextInt(2);
+            int attack = rando.nextInt(200);
+            System.out.println("Choose your attack");
+            System.out.println("Attack 1 or 2");
+            int coinFlip = scanner.nextInt();
+            if (coinFlip == numberRandom & userHealth > 0 & badGuyHealth > 0) {
+                System.out.println("Great shot! Your attack does " + attack + " damage\n");
+                badGuyHealth -= attack;
                 System.out.println("bad guy has " + badGuyHealth + " health\n");
 
             } else {
-                System.out.println("you missed!\n");
-                System.out.println("Enemy attacks and does " + badGuyAttack + " damage");
-               userHealth -= badGuyAttack;
+                System.out.println("You missed!\n");
+                System.out.println("Enemy attacks and does " + attack + " damage");
+                userHealth -= attack;
 
-                System.out.println(userName + "'s health= " + userHealth);
+                System.out.println("Your health= " + userHealth);
             }
-
-
-
-
-            if (userHealth == 0) {
+            if (userHealth <= 0) {
                 System.out.println("Game Over!!!");
+                userHealth = 400;
+                badGuyHealth = 400;
                 System.out.println("would you like to play again\n");
                 playAgain = scanner.next();
             }
-            if (badGuyHealth == 0){
+            if (badGuyHealth <= 0) {
                 System.out.println("You WON!!!");
+                userHealth = 400;
+                badGuyHealth = 400;
                 System.out.println("would you like to play again\n");
                 playAgain = scanner.next();
-
             }
-        } while (playAgain.equalsIgnoreCase("yes"));
-    }
+        } while(playAgain.equalsIgnoreCase("yes"));
 
+
+    }
 }
