@@ -3,7 +3,7 @@ package shapes;
 import java.util.Scanner;
 
 public class Circle {
-    private Scanner sc = new Scanner(System.in);
+//    private Scanner sc = new Scanner(System.in);
 
 
     private double radius;

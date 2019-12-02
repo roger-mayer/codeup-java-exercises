@@ -73,7 +73,7 @@ public class consoleGame {
             }
 
             int numberRandom = rando.nextInt(2);
-            System.out.println("Press 1 to punch Jigsaw press 2 to kick him!\n");
+            System.out.println("Press 1 to punch Jigsaw press 0 to kick him!\n");
             int coinFlip1 = scanner.nextInt();
             if (coinFlip1 == numberRandom & userHealth > 0 & badGuyHealth > 0){
                 System.out.println("Great shot! Your attack does " + attack + " damage\n");
