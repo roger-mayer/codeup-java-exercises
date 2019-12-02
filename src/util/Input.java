@@ -21,22 +21,12 @@ public class Input {
         }
     }
 
-    public int getInt(int min, int max){
-        System.out.printf("Give me a number between %d and %d\n", min, max);
-        int input = Integer.parseInt(sc.nextLine());
-        if(input < min){
-            System.out.println("The number is lower than the min, try again: \n");
-            return getInt(min, max);
-        } else if(input > max) {
-            System.out.println("The number is higher than the max, try again: \n");
-            return getInt(min, max);
-        }
-        return input;
-    }
-
-    public int getInt(){
-        System.out.println("Enter a number\n");
-        int num = sc.nextInt();
+    public int getInt(int min, int max) {
+        int num;
+        do {
+            System.out.println("Enter a number: ");
+            num = sc.nextInt();
+        } while (num < min || num > max);
         return num;
     }
 
