@@ -30,6 +30,11 @@ public class Input {
         return num;
     }
 
+    public int getInt(){
+        System.out.println("enter number");
+        return Integer.parseInt(getString());
+    }
+
     public double getDouble(double min, double max){
         System.out.printf("Give me a number between %f and %f\n", min, max);
         double input = Double.parseDouble(sc.next());

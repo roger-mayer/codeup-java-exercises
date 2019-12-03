@@ -5,15 +5,15 @@ import util.Input;
 public class MoviesApplication {
 
 
-        public static Movie[] addMovie(Movie[] newMovies, Movie newMovie) {
-            newMovies = Arrays.copyOf(newMovies, newMovies.length + 1);
-            newMovies[newMovies.length-1] = newMovie;
-            return newMovies;
+        public static Movie[] addMovie(Movie[] movieArray, Movie newMovie) {
+            movieArray = Arrays.copyOf(movieArray, movieArray.length + 1);
+            movieArray[movieArray.length-1] = newMovie;
+            return movieArray;
         }
 
-    public static void movie() {
-        Movie[] newMovies = MoviesArray.findAll();
+    public static void main(String [] args) {
         Input in = new Input();
+        Movie[] newMovies = MoviesArray.findAll();
         System.out.println();
         System.out.println("What would you like to do?\n" +
                 "\n" +
@@ -26,6 +26,7 @@ public class MoviesApplication {
                 "6 - add movie\n");
 
         int userInput = in.getInt(0,6);
+
         while (true){
             if (userInput == 0){
                 System.out.println("See you later");
@@ -67,15 +68,26 @@ public class MoviesApplication {
                 String input1 = sc.next();
                 System.out.println("Enter movie category \n");
                 String input2 = sc.next();
-//                new Movie(newMovie,newCategory);
                 Movie newMovie = new Movie(input1, input2);
                 newMovies = addMovie(newMovies, newMovie);
             }
-           movie();
+//           movie();
+            System.out.println();
+            System.out.println("What would you like to do?\n" +
+                    "\n" +
+                    "0 - exit\n" +
+                    "1 - view all movies\n" +
+                    "2 - view movies in the animated category\n" +
+                    "3 - view movies in the drama category\n" +
+                    "4 - view movies in the horror category\n" +
+                    "5 - view movies in the scifi category\n" +
+                    "6 - add movie\n");
+
+            userInput = in.getInt(0,6);
         }
     }
-    public static void main(String[] args) {
-        movie();
-    }
+//    public static void main(String[] args) {
+//        movie();
+//    }
 
 }

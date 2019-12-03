@@ -5,8 +5,8 @@ public class Movie {
     private String category;
 
     public Movie(String movieName, String movieCategory){
-        name = movieName;
-        category = movieCategory;
+        this.name = movieName;
+        this.category = movieCategory;
     }
     public String getName(){
         return name;
@@ -15,12 +15,6 @@ public class Movie {
         return category;
     }
 
-
-
-
-    public static void main(String[] args) {
-
-    }
 
 
 }
