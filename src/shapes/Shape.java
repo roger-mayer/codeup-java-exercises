@@ -1,4 +1,5 @@
 package shapes;
 
-public class Shape {
+//Create an abstract Shape class inside of the shapes directory.
+abstract class Shape {
 }
