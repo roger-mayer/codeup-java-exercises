@@ -1,4 +1,4 @@
-package Execptions;
+package ExecptionsPKG;
 import util.Input;
 
 public class Exceptions {
