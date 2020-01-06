@@ -52,6 +52,27 @@ public class HRexercises {
             System.out.println(" ");
     }
         in.close();
+
+        //to do
+//        System.out.println("Enter a number to see size");
+//        t=sc.nextInt();
+
+
+//        for(int k = 0; k < t; k++){
+//        try
+//        {
+//            long x=sc.nextLong();
+//            System.out.println(x+" can be fitted in:");
+//            if(x>=-128 && x<=127)System.out.println("* byte");
+
+
+
+//        }
+//        catch(Exception e)
+//        {
+//            System.out.println(sc.next()+" can't be fitted anywhere.");
+//        }
+    }
 }
 
-}
+
