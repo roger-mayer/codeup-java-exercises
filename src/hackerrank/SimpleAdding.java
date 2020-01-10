@@ -10,7 +10,9 @@ class Main {
     public static void main (String[] args) {
         // keep this function call here
         Scanner s = new Scanner(System.in);
-        System.out.println(SimpleAdding(s.nextLine()));
+        String input = s.nextLine();
+        int result = Integer.parseInt(input);
+        System.out.println(SimpleAdding(result));
     }
 }
 
